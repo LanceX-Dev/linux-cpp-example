@@ -1,4 +1,4 @@
-# Live Example Using  C/C++
+# Live Example Using C/C++
 
 ##License
 The MIT License (MIT)

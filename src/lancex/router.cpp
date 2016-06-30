@@ -1028,7 +1028,7 @@ namespace lancex {
         }
     }
     
-    void bindDevice() 
+    void bind() 
     {
         ifstream credentialFile(ABSOLUTE_CREDENTIAL_PATH);
         if (credentialFile) {
@@ -1085,7 +1085,7 @@ namespace lancex {
         getServerInfo();
         localIntfInit();
         remoteIntfInit();
-        bindDevice();
+//        bindDevice();
     }
 }
 

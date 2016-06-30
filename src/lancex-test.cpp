@@ -26,14 +26,23 @@
 
 int main(int argc, char **argv)
 {
-
+    // 1. download server information from lancex.cc
+    // 2. establish connection with lancex.cc
     lancex::init();
+    
+    // bind this device to your user account
+    // the first it runs it asks your login email and password
+    lancex::bind();
    
+    // This creates an URI https://api.lancex.cc/v1/greeting 
+    // which returns "Hello world!".
     lancex::httpHandler("greeting", []( lancex::Context context ) 
     {
         context.response("Hello world!");
     });
     
+    // This creates an URI https://api.lancex.cc/v1/loopback 
+    // which returns the context information about this request
     lancex::httpHandler("loopback", []( lancex::Context context ) 
     {
         lancex::JSON response{lancex::JSONType::JSON_OBJECT};
