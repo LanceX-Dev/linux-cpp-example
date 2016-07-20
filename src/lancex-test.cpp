@@ -45,10 +45,7 @@ int main(int argc, char **argv)
     // which returns the context information about this request
     lancex::httpHandler("loopback", []( lancex::Context context ) 
     {
-        lancex::JSON response{lancex::JSONType::JSON_OBJECT};
-        lancex::JSON request{context.request()};
-        response["request"] = lancex::JSON{context.request()}; 
-        context.response(response.stringify());
+        context.response(context.request());
     });
     
     while(1) 
